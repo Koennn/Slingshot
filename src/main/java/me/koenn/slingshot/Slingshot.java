@@ -2,15 +2,11 @@ package me.koenn.slingshot;
 
 import me.koenn.slingshot.items.ItemManager;
 import me.koenn.slingshot.proxy.CommonProxy;
-import me.koenn.slingshot.util.Logger;
-import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
  * <p>
