@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "slingshot",
+    "name": "Slingshot",
+    "description": "",
+    "version": "1.0.0",
+    "mcversion": "1.12",
+    "url": "https://goo.gl/MD9Fys",
+    "updateUrl": "",
+    "authorList": [
+      "Koenn"
+    ],
+    "credits": "Ziero1986, for coming up with this idea.",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
