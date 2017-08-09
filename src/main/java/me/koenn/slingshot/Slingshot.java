@@ -1,6 +1,6 @@
 package me.koenn.slingshot;
 
-import me.koenn.slingshot.items.ItemManager;
+import me.koenn.slingshot.entities.EntityManager;
 import me.koenn.slingshot.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -28,7 +28,8 @@ public class Slingshot {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        EntityManager.registerEntities();
+        proxy.registerEntityRenderers();
     }
 
     @Mod.EventHandler

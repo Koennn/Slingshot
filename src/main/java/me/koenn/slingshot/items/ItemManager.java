@@ -10,23 +10,22 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * <p>
  * Copyright (C) Koenn - All Rights Reserved
  */
 @GameRegistry.ObjectHolder(Slingshot.MODID)
-public class ItemManager {
+public final class ItemManager {
 
-    public static ItemBase SLINGSHOT = new ItemBase("slingshot");
+    public static ItemSlingshot SLINGSHOT = new ItemSlingshot("slingshot");
+    public static ItemRock ROCK = new ItemRock("rock");
+
 
     @Mod.EventBusSubscriber(modid = Slingshot.MODID)
     public static class ModelHandler {
         @SubscribeEvent
         public static void registerAllModels(ModelRegistryEvent event) {
-            final Item[] items = {SLINGSHOT};
+            final Item[] items = {SLINGSHOT, ROCK};
 
             for (Item item : items) {
                 if (item instanceof ItemModelProvider) {
@@ -43,7 +42,7 @@ public class ItemManager {
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             Logger.info("Initializing items...");
 
-            final Item[] items = {SLINGSHOT};
+            final Item[] items = {SLINGSHOT, ROCK};
 
             IForgeRegistry<Item> registry = event.getRegistry();
 
