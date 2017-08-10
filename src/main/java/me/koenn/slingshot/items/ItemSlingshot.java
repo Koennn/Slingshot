@@ -31,7 +31,7 @@ public class ItemSlingshot extends ItemBase {
     }
 
     public static float getVelocity(int charge) {
-        float f = (float) charge / 20.0F;
+        float f = (float) charge / 25.0F;
         f = (f * f + f * 2.0F) / 3.0F;
 
         if (f > 1.0F) {
@@ -46,11 +46,8 @@ public class ItemSlingshot extends ItemBase {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
         boolean flag = !this.findAmmo(playerIn).isEmpty();
 
-        ActionResult<ItemStack> ret = net.minecraftforge.event.ForgeEventFactory.onArrowNock(itemstack, worldIn, playerIn, handIn, flag);
-        if (ret != null) return ret;
-
         if (!playerIn.capabilities.isCreativeMode && !flag) {
-            return flag ? new ActionResult(EnumActionResult.PASS, itemstack) : new ActionResult(EnumActionResult.FAIL, itemstack);
+            return flag ? new ActionResult<>(EnumActionResult.PASS, itemstack) : new ActionResult<>(EnumActionResult.FAIL, itemstack);
         } else {
             playerIn.setActiveHand(handIn);
             return new ActionResult<>(EnumActionResult.SUCCESS, itemstack);
@@ -82,7 +79,7 @@ public class ItemSlingshot extends ItemBase {
                         ItemRock itemRock = (ItemRock) (itemstack.getItem() instanceof ItemRock ? itemstack.getItem() : ItemManager.ROCK);
                         EntityRock entityRock = new EntityRock(worldIn, entityplayer);
                         entityRock.setHeadingFromThrower(entityplayer, entityplayer.rotationPitch, entityplayer.rotationYaw, 0.0F, 1.5F, 1.0F);
-                        /*entityRock.setAim(entityplayer, entityplayer.rotationPitch, entityplayer.rotationYaw, f * 3.0F, 1.0F);
+                        /*
 
                         int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, stack);
 

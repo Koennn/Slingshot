@@ -15,7 +15,7 @@ public final class EntityManager {
     private static int entityID = 0;
 
     public static void registerEntities() {
-        registerEntity(EntityRock.class, "rock", 64, 20, false);
+        registerEntity(EntityRock.class, "rock", 64, 1, false);
     }
 
     private static void registerEntity(Class<? extends Entity> entityClass, String entityName, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
